@@ -1,5 +1,5 @@
 import express from 'express';
-import {uploadDocument , getDocuments , getDocumentById , updateDocument , deleteDocument} from '../controllers/documentController.js';
+import {uploadDocument , getDocuments , getDocumentById , deleteDocument} from '../controllers/documentController.js';
 import protect from '../middleware/auth.js';
 import upload from '../config/multer.js'; 
 
@@ -10,7 +10,7 @@ router.use(protect); // Apply authentication middleware to all document routes
 router.post('/upload' , upload.single('file') , uploadDocument);
 router.get('/' , getDocuments);
 router.get('/:id' , getDocumentById);
-router.put('/:id' , updateDocument);
+// router.put('/:id' , updateDocument);
 router.delete('/:id' , deleteDocument);
 
 export default router;
