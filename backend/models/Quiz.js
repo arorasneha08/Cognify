@@ -16,28 +16,32 @@ const quizSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    questions: {
-        type: String,
-        required: true
-    },
-    options: {
-        type: [String],
-        required: true,
-        validate: [array => array.length === 4, "Options must be an array of 4 strings"],
-    },
-    correctAnswer: {
-        type: String,
-        required: true,
-    },
-    explanation: {
-        type: String,
-        default: ""
-    },
-    difficulty: {
-        type: String,
-        enum: ["easy", "medium", "hard"],
-        default: "medium"
-    },
+    questions: [
+        {
+            question: {
+                type: String,
+                required: true
+            },
+            options: {
+                type: [String],
+                required: true,
+                validate: [arr => arr.length === 4, "Options must be an array of 4 strings"]
+            },
+            correctAnswer: {
+                type: String,
+                required: true
+            },
+            explanation: {
+                type: String,
+                default: ""
+            },
+            difficulty: {
+                type: String,
+                enum: ["easy", "medium", "hard"],
+                default: "medium"
+            }
+        }
+    ],
     userAnswers: [{
         questionIndex: {
             type: Number,
@@ -72,6 +76,6 @@ const quizSchema = new mongoose.Schema({
     timestamps: true
 });
 
-quizSchema.index({ userId: 1, documentId: 1 }, { unique: true });
+quizSchema.index({ userId: 1, documentId: 1 });
 const Quiz = mongoose.model("Quiz", quizSchema);
 export default Quiz;

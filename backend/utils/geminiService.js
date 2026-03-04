@@ -114,8 +114,8 @@ export const generateQuiz = async (text, numQuestions = 5) => {
                 if (trimmed.startsWith("Q:")) {
                     question = trimmed.substring(2).trim();
                 }
-                else if (trimmed.startsWith("/^O\d:/")) {
-                    options.push(trimmed.substring(3).trim());
+                else if (/^Q[1-4]:/.test(trimmed)) {
+                    options.push(trimmed.replace(/^Q[1-4]:/, "").trim());
                 }
                 else if (trimmed.startsWith("C:")) {
                     correctAnswer = line.substring(2).trim();
@@ -154,7 +154,7 @@ export const generateSummary = async (text) => {
 
     try {
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-summary-lite",
+            model: "gemini-2.5-flash-lite",
             contents: prompt,
         });
         const generatedText = response.text.trim();
