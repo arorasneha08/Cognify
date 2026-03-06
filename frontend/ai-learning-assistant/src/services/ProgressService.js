@@ -1,0 +1,15 @@
+import axiosInstance from "../utils/axiosInstance";
+import { API_PATHS } from "../utils/apiPath";
+
+const getDashboardData = async() =>{
+    try{
+        const response = await axiosInstance.get(API_PATHS.PROGRESS.GET_DASHBOARD);
+        return response.data;
+    }
+    catch(error){
+        throw error.response?.data || {message : "An unknown error occured"};
+    }
+}
+
+const progressService = {getDashboardData};
+export default progressService;
