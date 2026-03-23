@@ -4,7 +4,11 @@ import { API_PATHS } from "../utils/apiPath";
 const login = async (email, password) => {
     try {
         const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, { email, password });
-        return response.data;
+        // return response.data;
+        return {
+            user: response.data.data.user,
+            token: response.data.data.token
+        };
     }
     catch (error) {
         throw {

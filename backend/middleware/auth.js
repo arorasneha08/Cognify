@@ -3,7 +3,13 @@ import User from '../models/User.js';
 
 const protect = async (req, res, next) => {
     let token;
-
+    if (!req.headers.authorization || !req.headers.authorization.startsWith("Bearer")) {
+        return res.status(401).json({
+            success: false,
+            error: "No token provided",
+        });
+    }
+    
     //check if token exists in authorization header
     if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         try {
