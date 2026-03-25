@@ -8,6 +8,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import PageHeader from "../../components/common/PageHeader";
 import Tabs from "../../components/common/Tabs";
 import { Link } from "react-router-dom";
+import ChatInterface from "../../components/chat/ChatInterface";
 
 const DocumentDetailPage = () => {
   const { id } = useParams();
@@ -79,7 +80,7 @@ const DocumentDetailPage = () => {
     );
   };
   const renderChat = () => {
-    return "render chat";
+    return <ChatInterface />
   };
 
   const renderAIActions = () => {
