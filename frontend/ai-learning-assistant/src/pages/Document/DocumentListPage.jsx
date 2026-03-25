@@ -292,7 +292,7 @@ const DocumentListPage = () => {
       )}
 
       {isDeleteModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm z-[100]">
+        <div className="fixed inset-0 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm z-100">
           <div className="relative w-full max-w-md mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-2xl shadow-2xl shadow-slate-900/20 p-6">
             <button
               onClick={() => setIsDeleteModalOpen(false)}
