@@ -9,7 +9,7 @@ const AppLayout = ({children}) => {
     setIsSidebarOpen(!isSidebarOpen); 
   };
   return (
-    <div className='flex min-h-screen bg-neutral-50 text-neutral-900'>
+    <div className='flex min-h-screen bg-neutral-50 text-neutral-900 overflow-hidden'>
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className='flex-1 flex flex-col overflow-hidden' >
         <Header toggleSidebar={toggleSidebar} />

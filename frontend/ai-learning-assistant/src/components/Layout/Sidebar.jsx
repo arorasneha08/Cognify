@@ -30,11 +30,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
 
       {/* 🔥 Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-screen w-64 bg-white/90 backdrop-blur-lg border-r border-slate-200/60 z-50 
+        className={`fixed top-0 left-0 h-screen w-64 bg-white/90 backdrop-blur-lg border-r border-slate-200/60 
         md:relative md:flex md:flex-col md:translate-x-0
         transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        md:translate-x-0`}
+        md:translate-x-0 z-40`}
       >
         {/* logo */}
         <div className="flex items-center justify-between h-16 px-5 border-b border-slate-200/60">
