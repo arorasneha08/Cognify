@@ -7,7 +7,8 @@ const generateFlashcards = async(documentId , options) => {
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.
+        response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 
@@ -17,17 +18,17 @@ const generateQuiz = async(documentId , options) => {
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 
-const generateSummary = async(documentId , options) => {
+const generateSummary = async(documentId) => {
     try{
-        const response = await axiosInstance.post(API_PATHS.AI.GENERATE_SUMMARY , {documentId , ...options});
+        const response = await axiosInstance.post(API_PATHS.AI.GENERATE_SUMMARY , {documentId});
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 
@@ -37,7 +38,7 @@ const chat = async(documentId , message) => {
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 
@@ -47,7 +48,7 @@ const explainConcept = async(documentId , concept) => {
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 
@@ -57,7 +58,7 @@ const getChatHistory = async(documentId) => {
         return response.data;
     }
     catch(error){
-        throw error.reponse?.data || {message : "Failed to generate flashcards"}; 
+        throw error.response?.data || {message : "Failed to generate flashcards"}; 
     }
 }
 

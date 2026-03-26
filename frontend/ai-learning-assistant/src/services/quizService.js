@@ -6,7 +6,7 @@ const getQuizzesForDocument = async(documentId) => {
         const response = await axiosInstance.get(API_PATHS.QUIZZES.GET_QUIZZES_FOR_DOC(documentId));
         return response.data;
     }catch(error){
-        throw error.reponse?.data || {message : "failed to fetch quizzes "};
+        throw error.response?.data || {message : "failed to fetch quizzes "};
     }
 }
 
@@ -15,7 +15,7 @@ const getQuizById = async(id) => {
         const response = await axiosInstance.get(API_PATHS.QUIZZES.GET_QUIZ_BY_ID(id));
         return response.data;
     }catch(error){
-        throw error.reponse?.data || {message : "failed to fetch quizzes "};
+        throw error.response?.data || {message : "failed to fetch quizzes "};
     }
 }
 
@@ -24,7 +24,7 @@ const submitQuiz = async(id , answers) => {
         const response = await axiosInstance.post(API_PATHS.QUIZZES.SUBMIT_QUIZ(id) , {answers});
         return response.data;
     }catch(error){
-        throw error.reponse?.data || {message : "failed to fetch quizzes "};
+        throw error.response?.data || {message : "failed to fetch quizzes "};
     }
 }
 
@@ -33,7 +33,7 @@ const getQuizResults = async(id) => {
         const response = await axiosInstance.get(API_PATHS.QUIZZES.GET_QUIZ_RESULTS(id));
         return response.data;
     }catch(error){
-        throw error.reponse?.data || {message : "failed to fetch quizzes "};
+        throw error.response?.data || {message : "failed to fetch quizzes "};
     }
 }
 
@@ -42,7 +42,7 @@ const deleteQuiz = async(id) => {
         const response = await axiosInstance.delete(API_PATHS.QUIZZES.DELETE_QUIZ(id));
         return response.data;
     }catch(error){
-        throw error.reponse?.data || {message : "failed to fetch quizzes "};
+        throw error.response?.data || {message : "failed to fetch quizzes "};
     }
 }
 const quizService = {

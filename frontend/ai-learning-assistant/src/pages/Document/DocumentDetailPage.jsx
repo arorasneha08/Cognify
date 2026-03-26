@@ -9,6 +9,7 @@ import PageHeader from "../../components/common/PageHeader";
 import Tabs from "../../components/common/Tabs";
 import { Link } from "react-router-dom";
 import ChatInterface from "../../components/chat/ChatInterface";
+import AIActions from "../../components/ai/AIActions";
 
 const DocumentDetailPage = () => {
   const { id } = useParams();
@@ -84,7 +85,7 @@ const DocumentDetailPage = () => {
   };
 
   const renderAIActions = () => {
-    return "render AI Action";
+    return <AIActions/>
   };
 
   const renderFlashcardsTab = () => {
