@@ -2,22 +2,21 @@
 
 Cognify is an AI-powered learning platform that transforms unstructured documents (like PDFs) into structured, interactive learning materials. It leverages modern web technologies and AI capabilities to help users understand, revise, and retain information more effectively.
 
----
 
 ## 🚀 Features
 
-* 📄 Upload and manage PDF documents
-* 🤖 AI-generated summaries
-* 🧠 Concept explanations using AI
-* 📝 Automatic quiz generation
-* 🎴 Flashcard generation for revision
-* 💬 Chat with your documents (AI chatbot)
-* 📊 Progress tracking dashboard
-* 🔐 Secure authentication (JWT-based)
+* Upload and manage PDF documents
+* AI-generated summaries
+* Concept explanations using AI
+* Automatic quiz generation
+* Flashcard generation for revision
+* Chat with your documents (AI chatbot)
+* Progress tracking dashboard
+* Secure authentication (JWT-based)
 
----
 
-## 🏗️ Tech Stack
+
+## Tech Stack
 
 ### Frontend
 
@@ -41,7 +40,7 @@ Cognify is an AI-powered learning platform that transforms unstructured document
 * JWT (authentication)
 * Express Validator
 
----
+
 
 ## 📂 Project Structure
 
@@ -68,7 +67,7 @@ Cognify/
 └── README.md
 ```
 
----
+
 
 ## ⚙️ Installation & Setup
 
@@ -79,7 +78,7 @@ git clone https://github.com/arorasneha08/cognify.git
 cd cognify
 ```
 
----
+
 
 ### 2️⃣ Setup Backend
 
@@ -103,7 +102,7 @@ Run backend:
 npm run dev
 ```
 
----
+
 
 ### 3️⃣ Setup Frontend
 
@@ -113,7 +112,7 @@ npm install
 npm run dev
 ```
 
----
+
 
 ## 🌐 API Endpoints
 
@@ -125,7 +124,6 @@ npm run dev
 * PUT `/api/auth/profile`
 * PUT `/api/auth/change-password`
 
----
 
 ### 🤖 AI Routes
 
@@ -136,7 +134,7 @@ npm run dev
 * POST `/api/ai/explain-concept`
 * GET `/api/ai/chat-history/:documentId`
 
----
+
 
 ### 📄 Document Routes
 
@@ -145,7 +143,7 @@ npm run dev
 * GET `/api/documents/:id`
 * DELETE `/api/documents/:id`
 
----
+
 
 ### 🎴 Flashcard Routes
 
@@ -155,7 +153,7 @@ npm run dev
 * PUT `/api/flashcards/:cardId/star`
 * DELETE `/api/flashcards/:id`
 
----
+
 
 ### 📝 Quiz Routes
 
@@ -165,13 +163,13 @@ npm run dev
 * DELETE `/api/quizzes/:id`
 * GET `/api/quizzes/:documentId`
 
----
+
 
 ### 📊 Progress Routes
 
 * GET `/api/progress/dashboard`
 
----
+
 
 ## 🔄 How It Works
 
@@ -187,7 +185,6 @@ npm run dev
 5. Data is stored in MongoDB
 6. User interacts via dashboard and chatbot
 
----
 
 ## 🔐 Authentication
 
@@ -195,7 +192,7 @@ npm run dev
 * Protected routes using middleware
 * Secure password handling
 
----
+
 
 ## 📊 Database Design
 
@@ -207,7 +204,7 @@ Collections:
 * Quizzes
 * ChatHistory
 
----
+
 
 ## 🚀 Future Improvements
 
@@ -217,24 +214,20 @@ Collections:
 * LMS integration
 * Advanced analytics dashboard
 
----
 
 ## 🤝 Contributing
 
 Contributions are welcome!
 Feel free to fork the repo and submit a pull request.
 
----
 
 ## 📄 License
 
 This project is licensed under the MIT License.
 
----
 
 ## 👨‍💻 Author
 
 Developed by Sneha Arora
 
----
 
