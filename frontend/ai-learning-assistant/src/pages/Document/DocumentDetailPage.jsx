@@ -10,6 +10,7 @@ import Tabs from "../../components/common/Tabs";
 import { Link } from "react-router-dom";
 import ChatInterface from "../../components/chat/ChatInterface";
 import AIActions from "../../components/ai/AIActions";
+import FlashcardManager from "../../components/Flashcards/FlashcardManager";
 
 const DocumentDetailPage = () => {
   const { id } = useParams();
@@ -89,7 +90,7 @@ const DocumentDetailPage = () => {
   };
 
   const renderFlashcardsTab = () => {
-    return "render flashcards tab";
+    return <FlashcardManager documentId={id}/>
   };
 
   const renderQuizzesTab = () => {

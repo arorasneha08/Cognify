@@ -64,8 +64,13 @@ export const generateFlashcards = async (text, count = 10) => {
         return flashcards.slice(0, count);
     }
     catch (error) {
-        console.error("Gemini API error", error);
-        throw new Error("Failed to generate Flashcards");
+        console.error("Gemini ERROR 👉", error.response?.data || error.message);
+
+        throw new Error(
+            error.response?.data?.error?.message ||
+            error.message ||
+            "Failed to generate Flashcards"
+        );
     }
 };
 

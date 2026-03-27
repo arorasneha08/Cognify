@@ -42,7 +42,7 @@ const flashcardSchema = new mongoose.Schema({
     timestamps: true, 
 }); 
 
-flashcardSchema.index({ userId: 1, documentId: 1 }, { unique: true });
+flashcardSchema.index({ userId: 1, documentId: 1 }, { unique: false });
 
 const Flashcard = mongoose.model("Flashcard", flashcardSchema);
 export default Flashcard;
