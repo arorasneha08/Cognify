@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import ChatInterface from "../../components/chat/ChatInterface";
 import AIActions from "../../components/ai/AIActions";
 import FlashcardManager from "../../components/Flashcards/FlashcardManager";
+import QuizManager from "../../components/Quizzes/QuizManager";
 
 const DocumentDetailPage = () => {
   const { id } = useParams();
@@ -94,7 +95,7 @@ const DocumentDetailPage = () => {
   };
 
   const renderQuizzesTab = () => {
-    return "render quizzes tab";
+    return <QuizManager documentId={id}/>
   };
 
   const tabs = [
