@@ -28,7 +28,7 @@ export const getQuizzes = async (req, res, next) => {
 
 export const getQuizById = async( req, res, next) => {
     try{
-        const quiz = await Quiz.find({
+        const quiz = await Quiz.findOne({
             _id : req.params.id,
             userId : req.user._id,
         })
