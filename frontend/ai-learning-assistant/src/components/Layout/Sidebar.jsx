@@ -1,57 +1,69 @@
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
-import { LayoutDashboard, FileText, User, LogOut, BrainCircuit, BookOpen, X } from 'lucide-react'
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import {
+  LayoutDashboard,
+  FileText,
+  User,
+  LogOut,
+  BrainCircuit,
+  BookOpen,
+  X,
+} from "lucide-react";
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
-  const { logout } = useAuth()
-  const navigate = useNavigate()
+  const { logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout()
-    navigate("/login")
-  }
+    logout();
+    navigate("/login");
+  };
 
   const navLinks = [
     { to: "/dashboard", icon: LayoutDashboard, text: "Dashboard" },
     { to: "/documents", icon: FileText, text: "Documents" },
     { to: "/flashcards", icon: BookOpen, text: "Flashcards" },
     { to: "/profile", icon: User, text: "Profile" },
-  ]
+  ];
 
   return (
     <>
       {/* 🔥 Overlay (ONLY mobile) */}
       <div
         className={`fixed inset-0 bg-black/30 z-40 md:hidden transition-opacity duration-200 ${
-          isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleSidebar}
       />
 
       {/* 🔥 Sidebar */}
       <aside
-        // className={`fixed top-0 left-0 h-screen w-64 bg-white/90 backdrop-blur-lg border-r border-slate-200/60 
+        // className={`fixed top-0 left-0 h-screen w-64 bg-white/90 backdrop-blur-lg border-r border-slate-200/60
         // md:relative md:flex md:flex-col md:translate-x-0
         // transition-transform duration-300 ease-in-out
         // ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
         // md:translate-x-0 z-40`}
-  className={`fixed top-0 left-0 h-screen w-64 bg-white border-r z-50
-  transition-transform duration-300
-  ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} border-slate-200
-  md:translate-x-0`}
+        className={`fixed top-0 left-0 h-screen w-64 bg-white border-r z-50 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} border-slate-200 md:translate-x-0 flex flex-col`}
       >
         {/* logo */}
         <div className="flex items-center justify-between h-16 px-5 border-b border-slate-200/60">
           <div className="flex items-center gap-2">
             <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-linear-to-br from-emerald-400 to-teal-500 shadow-md shadow-emerald-500/20">
-              <BrainCircuit size={20} strokeWidth={2.5} className='text-white'/>
+              <BrainCircuit
+                size={20}
+                strokeWidth={2.5}
+                className="text-white"
+              />
             </div>
             <h1 className="text-sm md:text-base font-bold text-slate-900 tracking-tight">
               Cognify
             </h1>
           </div>
 
-          <button onClick={toggleSidebar} className='md:hidden text-slate-500 hover:text-slate-800'>
+          <button
+            onClick={toggleSidebar}
+            className="md:hidden text-slate-500 hover:text-slate-800"
+          >
             <X size={24} />
           </button>
         </div>
@@ -59,14 +71,14 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
         {/* nav links */}
         <nav className="flex-1 space-y-1.5 px-3 py-6">
           {navLinks.map((link, index) => {
-            const Icon = link.icon
+            const Icon = link.icon;
 
             return (
               <NavLink
                 key={index}
                 to={link.to}
                 onClick={() => {
-                  if (window.innerWidth < 768) toggleSidebar()
+                  if (window.innerWidth < 768) toggleSidebar();
                 }}
                 className={({ isActive }) =>
                   `group flex items-center gap-3 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 ${
@@ -89,23 +101,27 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                   </>
                 )}
               </NavLink>
-            )
+            );
           })}
         </nav>
 
         {/* logout */}
-        <div className='px-3 py-4 border-t border-slate-200/60'>
+        <div className="px-3 py-4 border-t border-slate-200/60">
           <button
             onClick={handleLogout}
-            className='group flex items-center gap-3 w-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-200'
+            className="group flex items-center gap-3 w-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
           >
-            <LogOut size={18} strokeWidth={2.5} className='group-hover:scale-110 transition-transform'/>
+            <LogOut
+              size={18}
+              strokeWidth={2.5}
+              className="group-hover:scale-110 transition-transform"
+            />
             Logout
           </button>
         </div>
       </aside>
     </>
-  )
-}
+  );
+};
 
-export default Sidebar; 
+export default Sidebar;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, use } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus } from "lucide-react";
 import toast from "react-hot-toast";
 
 import quizService from "../../services/QuizService";
@@ -102,7 +102,7 @@ const QuizManager = ({ documentId }) => {
   return (
     <div className="bg-white border-neutral-200 rounded-lg p-6">
       <div className="flex justify-end gap-2 mb-4">
-        <Button onClick={() => setIsGeneratingModalOpen(true)}>
+        <Button onClick={() => setIsGeneratingModalOpen(true)} className="cursor-pointer">
           <Plus size={16} />
           Generate Quiz
         </Button>

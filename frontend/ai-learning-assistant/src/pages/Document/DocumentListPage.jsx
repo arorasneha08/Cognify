@@ -126,7 +126,7 @@ const DocumentListPage = () => {
               learning.{" "}
             </p>
             <button
-              className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/30 active:scale-[0.98] cursor-pointer"
               onClick={() => setIsUploadModalOpen(true)}
             >
               <Plus className="w-4 h-4" strokeWidth={2.5} />
@@ -166,8 +166,8 @@ const DocumentListPage = () => {
             </p>
           </div>
           {documents.length > 0 && (
-            <Button onClick={() => setIsUploadModalOpen(true)}>
-              <Plus className="w-4 h-4 cursor-pointer" strokeWidth={2.5} />
+            <Button className="cursor-pointer" onClick={() => setIsUploadModalOpen(true)}>
+              <Plus className="w-4 h-4" strokeWidth={2.5} />
               Upload Document
             </Button>
           )}
@@ -291,7 +291,7 @@ const DocumentListPage = () => {
         </div>
       )}
 
-      {isDeleteModalOpen && (
+      {/* {isDeleteModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm z-100">
           <div className="relative w-full max-w-md mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-2xl shadow-2xl shadow-slate-900/20 p-6">
             <button
@@ -343,7 +343,72 @@ const DocumentListPage = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+
+      {isDeleteModalOpen && (
+  <div className="fixed inset-0 flex items-center justify-center p-2 bg-slate-900/60 backdrop-blur-sm z-50">
+    
+    <div className="relative w-full max-w-md bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl shadow-2xl p-8">
+      
+      {/* Close button */}
+      <button
+        onClick={() => setIsDeleteModalOpen(false)}
+        className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition"
+      >
+        <X className="w-5 h-5 cursor-pointer" />
+      </button>
+
+      {/* Header */}
+      <div className="flex items-start gap-4 mb-6">
+        <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+          <Trash2 className="w-7 h-7 text-red-600" />
+        </div>
+
+        <div>
+          <h2 className="text-xl font-semibold text-slate-900">
+            Delete Document
+          </h2>
+          <p className="text-sm text-slate-500 mt-1">
+            This action cannot be undone.
+          </p>
+        </div>
+      </div>
+
+      {/* Content */}
+      <p className="text-base text-slate-700 mb-8 leading-relaxed">
+        Are you sure you want to delete{" "}
+        <span className="font-semibold text-slate-900">
+          {selectedDoc?.title}
+        </span>
+        ?
+      </p>
+
+      {/* Buttons */}
+      <div className="flex gap-4">
+        <button
+          onClick={() => setIsDeleteModalOpen(false)}
+          className="flex-1 h-12 border border-slate-300 rounded-xl bg-white text-slate-700 text-sm font-semibold hover:bg-slate-100 transition cursor-pointer"
+        >
+          Cancel
+        </button>
+
+        <button
+          onClick={handleConfirmDelete}
+          className="flex-1 h-12 bg-red-500 text-white rounded-xl text-sm font-semibold hover:bg-red-600 transition flex items-center justify-center cursor-pointer"
+        >
+          {deleting ? (
+            <span className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Deleting...
+            </span>
+          ) : (
+            "Delete"
+          )}
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };

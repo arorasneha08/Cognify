@@ -141,7 +141,7 @@ const AIActions = () => {
                 </p>
               </div>
               <button
-                className="shrink-0 h-10 px-5 bg-linear-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-600 text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] text-white"
+                className="shrink-0 h-10 px-5 bg-linear-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-600 text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] text-white cursor-pointer"
                 onClick={handleGenerateSummary}
                 disabled={loadingAction === "summary"}
               >
@@ -188,7 +188,7 @@ const AIActions = () => {
                 <button
                   type="submit"
                   disabled={loadingAction === "explain" || !concept}
-                  className="shrink-0 h-10 px-5 bg-linear-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-600 text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] text-white"
+                  className="shrink-0 h-10 px-5 bg-linear-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-600 text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] text-white cursor-pointer"
                 >
                   {loadingAction === "explain" ? (
                     <span className="flex items-center gap-2">

@@ -187,7 +187,7 @@ const ChatInterface = () => {
           <button
             type="submit"
             disabled={loading || !message.trim()}
-            className="shrink-0 w-12 h-12 bg-linear-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-white transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="shrink-0 w-12 h-12 bg-linear-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-white transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 cursor-pointer"
           >
             <Send className="w-5 h-5" strokeWidth={2} />
           </button>

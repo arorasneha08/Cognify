@@ -149,7 +149,7 @@ const FlashcardManager = ({ documentId }) => {
 
         <button
           onClick={() => setSelectedSet(null)}
-          className="group inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-600 rounded-xl transition-colors duration-200"
+          className="group inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-600 rounded-xl transition-colors duration-200 cursor-pointer"
         >
           <ArrowLeft
             className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200"
@@ -173,7 +173,7 @@ const FlashcardManager = ({ documentId }) => {
             <button
               onClick={handlePrevCard}
               disabled={selectedSet.cards.length <= 1}
-              className="group flex items-center gap-2 px-5 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-100"
+              className="group flex items-center gap-2 px-5 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-100 cursor-pointer"
             >
               <ChevronLeft
                 className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200"
@@ -193,7 +193,7 @@ const FlashcardManager = ({ documentId }) => {
             <button
               onClick={handleNextCard}
               disabled={selectedSet.cards.length <= 1}
-              className="group flex items-center gap-2 px-5 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-100"
+              className="group flex items-center gap-2 px-5 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-100 cursor-pointer"
             >
               Next
               <ChevronRight
@@ -266,7 +266,7 @@ const FlashcardManager = ({ documentId }) => {
           <button
             onClick={handleGenerateFlashcards}
             disabled={generating}
-            className="group inline-flex items-center gap-2 px-5 h-11 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 active:scale-95 disabled:opacity-50"
+            className="group inline-flex items-center gap-2 px-5 h-11 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/25 active:scale-95 disabled:opacity-50 cursor-pointer"
           >
             {generating ? (
               <div className="flex items-center gap-2">
@@ -295,7 +295,7 @@ const FlashcardManager = ({ documentId }) => {
                 onClick={(e) => handleDeleteRequest(e, set)}
                 className="absolute top-4 right-4 p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-50 rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100"
               >
-                <Trash2 className="w-4 h-4" strokeWidth={2.5} />
+                <Trash2 className="w-4 h-4 cursor-pointer" strokeWidth={2.5} />
               </button>
 
               {/* content */}

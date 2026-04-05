@@ -32,7 +32,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
         </div>
       </div>
     </div>,
-    document.body   // 👈 THIS IS THE KEY FIX
+    document.body 
   );
 };
 
