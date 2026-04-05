@@ -144,6 +144,7 @@ export const getQuizResults = async(req, res, next) => {
                 statusCode : 404
             });
         }
+        // console.log(quiz); 
         if(!quiz.completedAt){
             return res.status(400).json({
                 success : false ,
@@ -163,12 +164,14 @@ export const getQuizResults = async(req, res, next) => {
                 explanation : question.explanation
             }
         })
+        // console.log(detailedResult); 
         res.status(200).json({
             success : true ,
             data : {
                 quiz :{
                     id : quiz._id,
                     title : quiz.documentId.title,
+                    documentId: quiz.documentId._id, 
                     score : quiz.score,
                     totalQuestions : quiz.totalQuestions,
                     completedAt : quiz.completedAt

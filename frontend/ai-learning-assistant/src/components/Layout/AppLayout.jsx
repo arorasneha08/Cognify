@@ -13,7 +13,7 @@ const AppLayout = ({children}) => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className='flex-1 flex flex-col overflow-hidden' >
         <Header toggleSidebar={toggleSidebar} />
-        <main className='flex-1 overflow-x-hidden overflow-y-auto p-6'>
+        <main className='mt-20 md:ml-64 h-[calc(100vh-4rem)] overflow-y-auto p-5 bg-neutral-50'>
           {children}
         </main>
       </div>

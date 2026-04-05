@@ -4,7 +4,7 @@ import { Bell, User, Menu } from "lucide-react";
 const Header = ({ toggleSidebar }) => {
   const { user } = useAuth();
   return (
-    <header className="sticky top-0 z-20 w-full h-16 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+    <header className="fixed top-0 z-20 w-full h-16 bg-white/80 backdrop-blur-xl border-b border-slate-200">
       <div className="flex items-center justify-between h-full px-6">
         {/* mobile number button */}
         <button
