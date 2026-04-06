@@ -1,9 +1,9 @@
-import React, { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import toast from "react-hot-toast";
 
 import quizService from "../../services/QuizService";
-import aiService from "../../services/AIservice";
+import aiService from "../../services/AIService";
 import Spinner from "../common/Spinner";
 import Button from "../common/Button";
 import Modal from "../common/Modal";
@@ -173,7 +173,7 @@ const QuizManager = ({ documentId }) => {
             <Button type="button" variant="outline" onClick={() => setIsDeleteModalOpen(false)} disabled={deleting}>
               Cancel
             </Button>
-            <Button onClick={handleConfirmDelete} disabled={deleting} className="bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-500" >
+            <Button onClick={handleConfirmDelete} disabled={deleting} className="bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-500 cursor-pointer">
               {deleting ? "Deleting..." : "Delete"}
             </Button>
           </div>

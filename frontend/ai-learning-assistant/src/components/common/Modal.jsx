@@ -4,7 +4,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999]">
+    <div className="fixed inset-0 z-9999">
       
       {/* FULL SCREEN OVERLAY */}
       <div

@@ -303,7 +303,7 @@ const QuizzesTakePage = () => {
 
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500"
+              className="h-full bg-linear-to-r from-emerald-500 to-teal-500 transition-all duration-500"
               style={{
                 width: `${((currentQuestionIndex + 1) / quiz.questions.length) * 100}%`
               }}

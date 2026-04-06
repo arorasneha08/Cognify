@@ -11,7 +11,7 @@ import {
 import toast from "react-hot-toast";
 import moment from "moment";
 import flashcardService from "../../services/FlashcardService";
-import aiService from "../../services/AIservice";
+import aiService from "../../services/AIService" ;
 import Spinner from "../common/Spinner";
 import Modal from "../common/Modal";
 import Flashcard from "./Flashcard";
@@ -231,7 +231,7 @@ const FlashcardManager = ({ documentId }) => {
           <button
             onClick={handleGenerateFlashcards}
             disabled={generating}
-            className="group inline-flex items-center justify-center gap-2 px-6 h-12 bg-linear-to-b from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 rounded-xl text-white font-semibold transition-all duration-200 text-sm shadow-lg shadow-emerald-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+            className="group inline-flex items-center justify-center gap-2 px-6 h-12 bg-linear-to-b from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 rounded-xl text-white font-semibold transition-all duration-200 text-sm shadow-lg shadow-emerald-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 cursor-pointer"
           >
             {generating ? (
               <div className="flex items-center gap-2">
@@ -350,7 +350,7 @@ const FlashcardManager = ({ documentId }) => {
             <button
               onClick={() => setIsDeleteModalOpen(false)}
               disabled={deleting}
-              className="px-4 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 h-11 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               type="button"
             >
               Cancel
@@ -358,7 +358,7 @@ const FlashcardManager = ({ documentId }) => {
             <button
               onClick={handleConfirmDelete}
               disabled={deleting}
-              className="px-5 h-11 bg-linear-to-r from-rose-500 to-red-500 hover:from-rose-600 hover:to-red-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-rose-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100  "
+              className="px-5 h-11 bg-linear-to-r from-rose-500 to-red-500 hover:from-rose-600 hover:to-red-600 text-white font-semibold text-sm rounded-xl transition-all duration-200 shadow-lg shadow-rose-500/25 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 cursor-pointer"
             >
               {deleting ? (
                 <span className="flex items-center gap-2">

@@ -4,7 +4,7 @@ import Flashcard from '../models/Flashcard.js';
 // @route   GET /api/flashcards/:documentId
 // @access  Private
 
-export const getFlashcards = async (req, res) => {
+export const getFlashcards = async (req, res , next) => {
     try {
         const flashcards = await Flashcard.find({ 
             userId: req.user._id, documentId: req.params.documentId 
@@ -27,7 +27,7 @@ export const getFlashcards = async (req, res) => {
 // @route   GET /api/flashcards
 // @access  Private
 
-export const getAllFlashcardSets = async (req, res) => {
+export const getAllFlashcardSets = async (req, res , next) => {
     try {
         const flashcardsSets = await Flashcard.find({ 
             userId : req.user._id, 
@@ -50,7 +50,7 @@ export const getAllFlashcardSets = async (req, res) => {
 // @route   POST /api/flashcards/:cardId/review
 // @access  Private
 
-export const reviewFlashcard = async (req, res) => {
+export const reviewFlashcard = async (req, res , next) => {
     try{
         const flashcardSet = await Flashcard.findOne({
             'cards._id' : req.params.cardId,
