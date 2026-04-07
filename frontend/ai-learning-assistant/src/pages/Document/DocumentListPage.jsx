@@ -291,60 +291,6 @@ const DocumentListPage = () => {
         </div>
       )}
 
-      {/* {isDeleteModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm z-100">
-          <div className="relative w-full max-w-md mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-2xl shadow-2xl shadow-slate-900/20 p-6">
-            <button
-              onClick={() => setIsDeleteModalOpen(false)}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all duration-200"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="mb-6">
-              <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
-                <Trash2 className="w-6 h-6 text-red-600" />
-              </div>
-
-              <h2 className="text-xl font-medium text-slate-900">
-                Confirm Deletion
-              </h2>
-            </div>
-
-            <p className="text-sm text-slate-600 mb-6">
-              Are you sure you want to delete:{" "}
-              <span className="font-semibold text-slate-900">
-                {selectedDoc?.title}
-              </span>
-              ?
-            </p>
-
-            <div className="flex gap-3">
-              <button
-                className="flex-1 h-11 border-2 border-slate-200 rounded-xl bg-white text-slate-700 text-sm font-semibold hover:bg-slate-50"
-                onClick={() => setIsDeleteModalOpen(false)}
-              >
-                Cancel
-              </button>
-
-              <button
-                className="flex-1 h-11 bg-red-500 text-white rounded-xl text-sm font-semibold hover:bg-red-600"
-                onClick={handleConfirmDelete}
-              >
-                {deleting ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Deleting...
-                  </span>
-                ) : (
-                  "Delete"
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      )} */}
-
       {isDeleteModalOpen && (
   <div className="fixed inset-0 flex items-center justify-center p-2 bg-slate-900/60 backdrop-blur-sm z-50">
     

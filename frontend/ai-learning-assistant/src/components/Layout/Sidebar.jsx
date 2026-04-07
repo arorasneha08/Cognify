@@ -109,7 +109,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
         <div className="px-3 py-4 border-t border-slate-200/60">
           <button
             onClick={handleLogout}
-            className="group flex items-center gap-3 w-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-200"
+            className="group flex items-center gap-3 w-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-red-50 hover:text-red-600 rounded-xl transition-all duration-200 cursor-pointer"
           >
             <LogOut
               size={18}

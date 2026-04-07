@@ -51,22 +51,22 @@ const DashboardPage = () => {
       label: "Total Documents",
       value: dashboardData.overview.totalDocuments,
       icon: FileText,
-      gradient: "from-blue-400 to cyan-500",
-      shadowColor: "shadow-blue-500/25",
+      gradient: "from-cyan-400 to blue-500",
+      shadowColor: "shadow-blue-500/50",
     },
     {
       label: "Total Flashcards",
       value: dashboardData.overview.totalFlashcards,
       icon: BookOpen,
       gradient: "from-purple-400 to pink-500",
-      shadowColor: "shadow-blue-500/25",
+      shadowColor: "shadow-purple-500/50",
     },
     {
       label: "Total Quizzes",
       value: dashboardData.overview.totalQuizzes,
       icon: BrainCircuit,
       gradient: "from-emerald-400 to teal-500",
-      shadowColor: "shadow-purple-500/25",
+      shadowColor: "shadow-green-500/50",
     },
   ];
 
@@ -138,8 +138,8 @@ const DashboardPage = () => {
                 ...(dashboardData.recentActivity.quizzes || []).map((quiz) => ({
                   id: quiz._id,
                   description: quiz.title,
-                  timestamp: quiz.lastAttempted,
-                  link: `/quizzes/${quiz._id}`,
+                  timestamp: quiz.completedAt || quiz.createdAt,
+                  link: `/quizzes/${quiz._id}/results`,
                   type: "quiz",
                 })),
               ]
